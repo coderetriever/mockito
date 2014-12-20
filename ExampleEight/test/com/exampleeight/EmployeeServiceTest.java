@@ -60,9 +60,8 @@ public class EmployeeServiceTest {
         EmployeeService employeeService = new EmployeeService();
         employeeService.giveIncrementToAllEmployeesOf(9);
 
-        //We first have to inform PowerMock that we will now verify
-        //the invocation of a static method by calling verifyStatic.
-        PowerMockito.verifyStatic();
+        //Verify if the static method is called just once.
+        PowerMockito.verifyStatic(Mockito.times(1));
         //Then we need to inform PowerMock
         //about the method we want to verify.
         //This is done by actually invoking the static method.
